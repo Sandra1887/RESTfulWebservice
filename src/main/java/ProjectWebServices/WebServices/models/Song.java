@@ -1,4 +1,4 @@
-package ProjectWebServices.WebServices.entity;
+package ProjectWebServices.WebServices.models;
 
 import jakarta.persistence.*;
 

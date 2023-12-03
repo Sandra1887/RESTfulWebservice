@@ -1,7 +1,7 @@
 package ProjectWebServices.WebServices;
 
-import ProjectWebServices.WebServices.entity.Role;
-import ProjectWebServices.WebServices.entity.User;
+import ProjectWebServices.WebServices.models.Role;
+import ProjectWebServices.WebServices.models.User;
 import ProjectWebServices.WebServices.repository.RoleRepository;
 import ProjectWebServices.WebServices.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;

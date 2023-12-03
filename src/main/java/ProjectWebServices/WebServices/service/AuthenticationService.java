@@ -1,8 +1,8 @@
 package ProjectWebServices.WebServices.service;
 
 import ProjectWebServices.WebServices.dto.LoginResponseDTO;
-import ProjectWebServices.WebServices.entity.Role;
-import ProjectWebServices.WebServices.entity.User;
+import ProjectWebServices.WebServices.models.Role;
+import ProjectWebServices.WebServices.models.User;
 import ProjectWebServices.WebServices.repository.RoleRepository;
 import ProjectWebServices.WebServices.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -34,17 +34,6 @@ public class AuthenticationService {
 
     @Autowired
     private TokenService tokenService;
-
-    /*public User registerUser(String username, String password) {
-
-        String encodedPassword = passwordEncoder.encode(password);
-        Role userRole = roleRepository.findByAuthority("USER").get();
-
-        Set<Role> authorities = new HashSet<>();
-        authorities.add(userRole);
-
-        return userRepository.save(new User(username, encodedPassword, authorities));
-    }*/
 
     public ResponseEntity<User> registerUser(String username, String password) {
         try {

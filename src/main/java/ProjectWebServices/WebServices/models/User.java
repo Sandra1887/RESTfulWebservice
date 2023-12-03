@@ -1,4 +1,4 @@
-package ProjectWebServices.WebServices.entity;
+package ProjectWebServices.WebServices.models;
 
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,7 +13,7 @@ import java.util.Set;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //alt. IDENTITY
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(unique = true)
     private String username;

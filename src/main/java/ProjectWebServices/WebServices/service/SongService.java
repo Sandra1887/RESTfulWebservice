@@ -1,17 +1,11 @@
 package ProjectWebServices.WebServices.service;
 
-import ProjectWebServices.WebServices.entity.Song;
+import ProjectWebServices.WebServices.models.Song;
 import ProjectWebServices.WebServices.repository.SongRepository;
-import org.apache.coyote.Response;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

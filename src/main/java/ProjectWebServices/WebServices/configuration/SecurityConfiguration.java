@@ -27,6 +27,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.http.HttpMethod.*;
 
+/***
+ * Configuration Class that
+ */
 @Configuration
 public class SecurityConfiguration {
 
@@ -74,7 +77,7 @@ public class SecurityConfiguration {
         return http.build();
     }
 
-    @Bean //tar in jwt och dekrypterar datan
+    @Bean
     public JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withPublicKey(keys.getPublicKey()).build();
     }

@@ -1,6 +1,6 @@
 package ProjectWebServices.WebServices.dto;
 
-import ProjectWebServices.WebServices.entity.User;
+import ProjectWebServices.WebServices.models.User;
 
 public class LoginResponseDTO {
     private User user;

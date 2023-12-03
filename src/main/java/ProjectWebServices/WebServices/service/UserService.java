@@ -1,11 +1,7 @@
 package ProjectWebServices.WebServices.service;
 
-import ProjectWebServices.WebServices.entity.Role;
-import ProjectWebServices.WebServices.entity.User;
+import ProjectWebServices.WebServices.models.User;
 import ProjectWebServices.WebServices.repository.UserRepository;
-import org.apache.coyote.Response;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.*;
 
@@ -26,15 +21,10 @@ public class UserService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-    private PasswordEncoder passwordEncoder; //hash the password
+    private PasswordEncoder passwordEncoder;
 
     //private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    /*public User saveUser(
-            @PathVariable User user
-    ) {
-       return userRepository.save(user);
-    }*/
 
     public ResponseEntity<Optional<User>> selectOneUser(Long id) {
         try {
@@ -51,7 +41,6 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    //Metod som returnerar alla användare från databas
     public ResponseEntity<List<User>> selectAllUsers(){
         try {
             List<User> users = userRepository.findAll();

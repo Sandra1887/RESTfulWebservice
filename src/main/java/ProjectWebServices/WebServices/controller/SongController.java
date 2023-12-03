@@ -1,6 +1,6 @@
 package ProjectWebServices.WebServices.controller;
 
-import ProjectWebServices.WebServices.entity.Song;
+import ProjectWebServices.WebServices.models.Song;
 import ProjectWebServices.WebServices.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +14,10 @@ import java.util.Optional;
 @CrossOrigin("*")
 public class SongController {
 
-    //ALLT FUNKAR VIA POSTMAN
     @Autowired
     private SongService songService;
 
-    @PostMapping("/create") //FUNKAR
+    @PostMapping("/create")
     public ResponseEntity<Song> createSong(
             @RequestBody Song song) {
         try {
@@ -28,7 +27,7 @@ public class SongController {
         }
     }
 
-    @GetMapping("/selectOne/{id}") //FUNKAR
+    @GetMapping("/selectOne/{id}")
     public ResponseEntity<Optional<Song>> selectOneSong(
             @PathVariable Long id
     ) {

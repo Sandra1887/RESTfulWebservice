@@ -2,7 +2,7 @@ package ProjectWebServices.WebServices.controller;
 
 import ProjectWebServices.WebServices.dto.LoginResponseDTO;
 import ProjectWebServices.WebServices.dto.RegistrationDTO;
-import ProjectWebServices.WebServices.entity.User;
+import ProjectWebServices.WebServices.models.User;
 import ProjectWebServices.WebServices.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
