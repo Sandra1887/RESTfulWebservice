@@ -57,12 +57,18 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/auth/**").permitAll();
-                    auth.requestMatchers(GET, "/").permitAll();
-                    auth.requestMatchers(GET, "/**").permitAll();
-                    auth.requestMatchers(POST, "/").permitAll();
-                    auth.requestMatchers("/admin/**").hasRole("ADMIN");
-                    auth.requestMatchers(PUT, "/**").hasAnyRole("ADMIN", "USER");
-                    auth.requestMatchers(DELETE, "/**").hasAnyRole("ADMIN, USER");
+                    //auth.requestMatchers(GET, "/").permitAll();
+                    auth.requestMatchers(GET, "/admin/selectone/**").permitAll();
+                    auth.requestMatchers(GET, "/admin/selectall").permitAll();
+                    auth.requestMatchers(GET, "/songs/selectone/**").permitAll();
+                    auth.requestMatchers(GET, "/songs/selectall").permitAll();
+                    auth.requestMatchers(POST, "/songs/**").permitAll();
+                    //auth.requestMatchers(POST, "/").permitAll();
+                    //auth.requestMatchers("/admin/**").hasRole("ADMIN");
+                    auth.requestMatchers(PUT,"/admin/update/**").hasRole("ADMIN");
+                    auth.requestMatchers(DELETE,"/admin/delete/**").hasRole("ADMIN");
+                    //auth.requestMatchers(PUT, "/**").hasAnyRole("ADMIN", "USER");
+                    //auth.requestMatchers(DELETE, "/**").hasAnyRole("ADMIN, USER");
                     //auth.requestMatchers("/user/**").hasAnyRole("ADMIN", "USER");
                     auth.anyRequest().authenticated();
                 });

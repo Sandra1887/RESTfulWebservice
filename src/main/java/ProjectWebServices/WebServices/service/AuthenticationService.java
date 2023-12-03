@@ -54,7 +54,7 @@ public class AuthenticationService {
             Set<Role> authorities = new HashSet<>();
             authorities.add(userRole);
 
-            return ResponseEntity.ok(userRepository.save(new User(username, encodedPassword, authorities)));
+            return ResponseEntity.ok(userRepository.save(new User(0, username, encodedPassword, authorities)));
 
         } catch (Exception e) {
             return ResponseEntity.status(401).build();

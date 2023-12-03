@@ -24,10 +24,8 @@ public class SongService {
 
     public ResponseEntity<Song> createSong(Song song) {
         try {
-            //logger.info("Song was created");
             return ResponseEntity.ok(songRepository.save(song));
         } catch (Exception e) {
-            //logger.info("Error creating song");
             return ResponseEntity.status(400).build();
         }
     }

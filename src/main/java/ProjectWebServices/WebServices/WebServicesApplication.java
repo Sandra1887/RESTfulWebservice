@@ -16,11 +16,10 @@ import java.util.Set;
 @SpringBootApplication
 public class WebServicesApplication {
 
-	/***
+	/**
 	 * 1. En databas med sånger
 	 * 2. Vem som helst ska kunna komma åt "add, selectOne och selectAll"
 	 * 3. Men bara en specifik ska kunna komma åt "Update och Delete"
-	 * @param args
 	 */
 
 	public static void main(String[] args) {
