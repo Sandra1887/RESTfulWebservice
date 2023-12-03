@@ -1,17 +1,17 @@
 package ProjectWebServices.WebServices.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Song {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "title")
     private String title;
+    @Column(name = "artist")
     private String artist;
 
     public Song() {}
@@ -21,11 +21,11 @@ public class Song {
         this.artist = artist;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,5 +43,10 @@ public class Song {
 
     public void setArtist(String artist) {
         this.artist = artist;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Song %s is performed by %s", this.title, this.artist);
     }
 }
