@@ -28,7 +28,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.http.HttpMethod.*;
 
 /***
- * Configuration Class that
+ * Configuration Class that handles the security authentication in the API
  */
 @Configuration
 public class SecurityConfiguration {
@@ -39,13 +39,11 @@ public class SecurityConfiguration {
         this.keys = keys;
     }
 
-    //12-03
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    //12-03
     @Bean
     public AuthenticationManager authManager(UserDetailsService userDetailsService) {
         DaoAuthenticationProvider daoProvider = new DaoAuthenticationProvider();
@@ -54,6 +52,13 @@ public class SecurityConfiguration {
         return new ProviderManager(daoProvider);
     }
 
+    /***
+     * Metod som skapar och en FilterChain där man bestämmer vilka roller som har tillgång till vad, i i detta fallet
+     * vårt API.
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
@@ -77,11 +82,19 @@ public class SecurityConfiguration {
         return http.build();
     }
 
+    /***
+     * Metod som används för att avkoda och verifiera JWTs.
+     * @return
+     */
     @Bean
     public JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withPublicKey(keys.getPublicKey()).build();
     }
 
+    /**
+     * Metod som skapar och konfigurerar en "JwtEncoder" för att hantera och koda JWTs.
+     * @return
+     */
     @Bean
     public JwtEncoder jwtEncoder() {
         JWK jwk = new RSAKey.Builder(keys.getPublicKey()).privateKey(keys.getPrivateKey()).build();
@@ -89,6 +102,11 @@ public class SecurityConfiguration {
         return new NimbusJwtEncoder(jwks);
     }
 
+    /***
+     * Metod som skapar och konfigurerar en "JwtAuthenticationConverter" som används för
+     * JWT autentisering.
+     * @return
+     */
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
