@@ -8,6 +8,17 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+/***
+ * Entityklass för "User" med dess attribut och annotations.
+ * Implementerar "UserDetails" samt dess metoder
+ * "@Table" vad tabellen heter
+ * "@Id" som sätter id:t som primary key
+ * "@GeneratedValue" specificerar hur primary key skall genereras och "AUTO" låter JPA avgöra vilken som är bästa
+ * strategin att använda.
+ * "@Column(unique" - för att ingen skall kunna skapa ett redan existerande username
+ * "@ManyToMany" - definerar förhållandet mellan olika entities
+ * "@JoinTable" - specificerar detaljerna för hur den skall hantera "manyToMany"-förhållandet
+ */
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {

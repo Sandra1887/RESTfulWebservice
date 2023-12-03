@@ -1,5 +1,9 @@
 package ProjectWebServices.WebServices.dto;
 
+/***
+ * DataTransferObject-klass som används för att hålla information om registrering och att förflytta denna
+ * informationen
+ */
 public class RegistrationDTO {
     private String username;
     private String password;

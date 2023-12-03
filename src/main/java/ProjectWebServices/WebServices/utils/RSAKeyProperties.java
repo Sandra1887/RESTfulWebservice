@@ -6,6 +6,9 @@ import java.security.KeyPair;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
+/**
+ * En klass för att sätta ihop en RSAKey som behövs för att signera och verifiera en JWT(Json web token).
+ */
 @Component
 public class RSAKeyProperties {
     private RSAPublicKey publicKey;

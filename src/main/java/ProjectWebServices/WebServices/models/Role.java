@@ -3,6 +3,15 @@ package ProjectWebServices.WebServices.models;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 
+/***
+ * Entityklass för "Role" med dess attribut och annotations.
+ * "@Table" vad tabellen heter
+ * "@Id" som sätter id:t som primary key
+ * "@GeneratedValue" specificerar hur primary key skall genereras och "AUTO" låter JPA avgöra vilken som är bästa
+ * strategin att använda.
+ * "@Column(name" - vad kolumnen för primary key skall heta
+ *
+ */
 @Entity
 @Table(name = "roles")
 public class Role implements GrantedAuthority {

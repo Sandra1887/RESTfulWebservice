@@ -26,6 +26,14 @@ public class WebServicesApplication {
 		SpringApplication.run(WebServicesApplication.class, args);
 	}
 
+	/***
+	 * Ett interface som startar ett callback för att exekvera kod innan applicationen startar.
+	 * I detta fallet skapar den de roller som krävs för att syftet med appen skall fungera som den ör tänkt.
+	 * @param roleRep
+	 * @param userRep
+	 * @param encoder
+	 * @return
+	 */
 	@Bean
 	CommandLineRunner run(RoleRepository roleRep, UserRepository userRep, PasswordEncoder encoder) {
 		return args -> {

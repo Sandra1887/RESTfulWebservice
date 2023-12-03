@@ -13,6 +13,9 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 
+/***
+ * Serviceklass som generar en JWT-token med hjälp av JwtEncoder och JwtDecoder.
+ */
 @Service
 public class TokenService {
     @Autowired

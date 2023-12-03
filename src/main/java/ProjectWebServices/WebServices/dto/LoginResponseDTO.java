@@ -2,6 +2,9 @@ package ProjectWebServices.WebServices.dto;
 
 import ProjectWebServices.WebServices.models.User;
 
+/***
+ * DataTransferObject-klass som används för att representera och strukturera login responses.
+ */
 public class LoginResponseDTO {
     private User user;
     private String jwt;
