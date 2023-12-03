@@ -9,9 +9,9 @@ by Sandra Jeppsson Kristiansson
 ### Setup
 - Open the project in the prefered IDEA
 - In the "src" -> "main" -> "resources" -> "application properties" -> change database-name, username and password.
+- Start Postman
 - Run the Main class
 - Open the "postman.md"-documentation in the project
-- Open Postman
 
 - To register a new User: 
   - Open a tab and enter "http://localhost:8000/auth/register" with "POST"-request
